@@ -17,6 +17,35 @@
                 border-radius: 20px;
             }
 
+            /* style de poema dado pelo chat com as classes filho*/
+
+            .poema {
+            max-width: 400px;
+            margin: 20px auto;
+            padding: 15px;
+            background: #f9f9f9;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            font-family: Georgia, serif;
+            text-align: center;
+            }
+
+            .poema p {
+            margin: 6px 0;
+            font-size: 1.1em;
+            }
+
+            /* versos ímpares */
+            .poema p:nth-child(odd) {
+            color: #1a73e8;
+            font-weight: bold;
+            }
+
+            /* versos pares */
+            .poema p:nth-child(even) {
+            color: #d93025;
+            font-style: italic;
+            }
         </style>
     </head>
     <body>
@@ -32,9 +61,18 @@
             <a href="info.html">Informação</a>
             </nav>
 
+            <h2>Multimedia</h2>
+            <p>Nesta pagina encontra conteudos multimedia .</p>
+
+            <nav class="ancoras">
+                <a href="#fotografias">Fotografias</a> |
+                <a href="#video">Vídeo</a> |
+                <a href="#poesia">Poema</a>
+            </nav>
+
 
             <section>
-            <h3>Fotografias</h3>
+            <h3 id="fotografias">Fotografias</h3>
                 <div class="fotografias">
                     <img src="../images/1.jpg" alt="foto 1">
                     <img src="../images/2.jpg" alt="foto 2">
@@ -48,8 +86,34 @@
                 </div>
             </section>
 
-<h2>Multimedia</h2>
-<p>Nesta pagina encontra conteudos multimedia .</p>
+            <section>
+            <h3 id="video">Vídeo</h3>
+            <iframe
+                width="560"
+                height="315"
+                src="https://www.youtube.com/embed/rmxNPzpuFB4"
+                title="SINGAPORE Evening Walking Tour 4K"
+                allowfullscreen>
+            </iframe>
+            </section>
+
+
+            <section>
+            <h3 id="poesia">Poesia</h3>
+            <div class="poema">
+                <p>Singapura desperta, luz no mar,</p>
+                <p>Arranha-céus erguem-se a brilhar,</p>
+                <p>Jardins suspensos, sonho a crescer,</p>
+                <p>No coração do mundo, a florescer.</p>
+                <p>Rio que abraça memórias e cor,</p>
+                <p>Cultura viva, misto de sabor,</p>
+                <p>Entre passado e futuro a dançar,</p>
+                <p>Singapura, farol a iluminar.</p>
+            </div>
+            </section>
+
+
+
             </main>
         <footer>
             <p>DIW 2025</p>
