@@ -21,7 +21,6 @@
       background-position: center; /* centraliza a imagem */
       background-repeat: no-repeat;/* evita repetições */
       padding: 40px 20px;          /* espaço interno para respirar */
-      border-radius: 12px;         /* opcional: cantos arredondados */
     }
 
     #projetos h2 {
@@ -93,6 +92,27 @@ nav a {
   color: #666;
 }
 
+#cadeira {
+      background-image: url("images/diw.svg"); /* caminho da tua imagem */
+      background-size: cover;      /* cobre toda a área */
+      background-position: center; /* centraliza a imagem */
+      background-repeat: no-repeat;/* evita repetições */
+      padding: 40px 20px;          /* espaço interno para respirar */
+    }
+
+#cadeira div {
+  background-color: white; /* fundo branco */
+  padding: 20px;           /* espaço interno */
+  border: 3px solid #000; 
+  border-radius: 16px;     /* cantos arredondados, opcional */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* sombra leve */
+  font-size: 0.9rem;       /* texto menor */
+  line-height: 1.5;        /* facilita leitura */
+  color: #222;             /* cor do texto */
+  max-width: 800px;        /* largura máxima, opcional */
+  margin: 20px auto;       /* centraliza horizontalmente */
+}
+
   </style>
 </head>
 <body>
@@ -148,41 +168,29 @@ nav a {
   <!---------------------------------------------------------------------------------------->
 
   <section id="cadeira">
-    <p>diw 🎉</p>
+  
+      <div>
+      <p>Eis a minha primeira página Web!</p><br>
+      <p>
+        Na Unidade Curricular de 
+        <a href="https://moodle.ensinolusofona.pt/course/view.php?id=11323" target="_blank">
+          Desenvolvimento de Interfaces Web
+        </a>
+        abordaremos as seguintes tecnologias Web &#127760;:
+      </p>
+        <ul>
+          <li>HTML</li>
+          <li>CSS</li>
+          <li>JavaScript</li>
+          <li>React e Next.js</li>
+        </ul>
+        <br>
+      <p>Teremos criar soluções criativas!</p>
+    </div>
+
   </section>
 
 
-
-
-
-
-
-
-
-  <p>Eis a minha primeira página Web!</p>
-  <p>
-    Na Unidade Curricular de 
-    <a href="https://moodle.ensinolusofona.pt/course/view.php?id=11323" target="_blank">
-      Desenvolvimento de Interfaces Web
-    </a>
-    abordaremos as seguintes tecnologias Web &#127760;:
-  </p>
-  <ul>
-    <li>HTML</li>
-    <li>CSS</li>
-    <li>JavaScript</li>
-    <li>React e Next.js</li>
-  </ul>
-  <p>Teremos criar soluções criativas!</p>
-
-  <nav>
-    <ul>
-      <li><a href="lab1/index.html">Lab1</a></li>
-      <li><a href="lab2/index.html">Lab2</a></li>
-      <li><a href="lab3/index.html">Lab3</a></li>
-    </ul>
-  </nav>
-   <img src="images/diw.svg" alt="Desenvolvimento de Interfaces Web" style="width: 300px;">
 </main>
 
 <footer>
