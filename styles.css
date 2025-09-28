@@ -62,3 +62,119 @@
             color: #d93025;
             font-style: italic;
             }
+
+            * {
+            font-family: sans-serif;
+            padding: 0;
+            margin: 0;
+            }
+
+            header,footer, section, footer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 5vh;
+            }
+
+            header {
+            background: red;
+            position: sticky;
+            height: 10vh;
+            top: 0;
+            }
+
+            section:nth-child(1) {
+            height: 90vh;
+            background: purple;
+
+            background-image: url('https://images.unsplash.com/photo-1485470733090-0aae1788d5af?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8d2FsbHBhcGVyJTIwNGt8ZW58MHx8MHx8fDA%3D');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            position: relative;
+            
+            color: white;
+            }
+
+            section:nth-child(2) {
+            height: 100vh;
+            background: orange;
+            }
+
+            section:nth-child(3) {
+            height: 80vh;
+            }
+
+            footer {
+            height: 10vh;
+            background: black;
+            color: white;
+            }
+
+            nav ul {
+                list-style:none;
+                padding: 0;
+                margin: 0;
+                display: flex;
+                gap: 1rem;
+            }
+
+            nav a {
+                text-decoration: none;
+                color: inherit;
+            }
+
+
+            /*chat ajudou*/
+            #projetos {
+            padding: 60px 20px;
+            background-color: #f8f8f8;
+            text-align: center;
+            }
+
+            #projetos h2 {
+
+            padding: 60px 10%;
+            background-color: #f8f8f8;
+            font-size: 2rem;
+            margin-bottom: 40px;
+            text-align: left; 
+            }
+
+            /* Container dos cards */
+            .cards-container {
+            display: flex;
+            flex-wrap: wrap;       /* quebra em ecrãs pequenos */
+            justify-content: center;
+            gap: 20px;
+            }
+
+            /* Card como link */
+            .card {
+            display: block; /* garante que ocupa como um bloco */
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            width: 250px;
+            padding: 20px;
+            text-align: left;
+            text-decoration: none; /* remove sublinhado */
+            color: inherit;        /* usa a cor normal do texto */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            }
+
+            .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+            }
+
+            .card h3 {
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+            color: #333;
+            }
+
+            .card p {
+            font-size: 0.95rem;
+            color: #666;
+            }

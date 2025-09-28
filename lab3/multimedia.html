@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt">
+    <head>
+        <meta charset="UTF-8">
+        <title>Cidade</title>
+        <link rel="stylesheet" href="../styles.css" />
+        <style>
+            .fotografias {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+
+            .fotografias img {
+                width: 150px;
+                border-radius: 20px;
+            }
+
+            /* style de poema dado pelo chat com as classes filho*/
+
+            
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>Singapura</h1>
+        </header>
+        <main>
+            <h2>Home</h2>
+            <nav>
+            <a href="index.html">Home</a>
+            <a href="local.html">Localização</a>
+            <a href="multimedia.html">Multimédia</a>
+            <a href="info.html">Informação</a>
+            </nav>
+
+            <h2>Multimedia</h2>
+            <p>Nesta pagina encontra conteudos multimedia .</p>
+
+            <nav class="ancoras">
+                <a href="#fotografias">Fotografias</a> |
+                <a href="#video">Vídeo</a> |
+                <a href="#poesia">Poema</a>
+            </nav>
+
+
+            <section>
+            <h3 id="fotografias">Fotografias</h3>
+                <div class="fotografias">
+                    <img src="../images/1.jpg" alt="foto 1">
+                    <img src="../images/2.jpg" alt="foto 2">
+                    <img src="../images/3.jpg" alt="foto 3">
+                    <img src="../images/4.jpg" alt="foto 4">
+                    <img src="../images/5.jpg" alt="foto 5">
+                    <img src="../images/6.jpg" alt="foto 6">
+                    <img src="../images/7.jpg" alt="foto 7">
+                    <img src="../images/8.jpg" alt="foto 8">
+                    
+                </div>
+            </section>
+
+            <section>
+            <h3 id="video">Vídeo</h3>
+            <iframe
+                width="560"
+                height="315"
+                src="https://www.youtube.com/embed/rmxNPzpuFB4"
+                title="SINGAPORE Evening Walking Tour 4K"
+                allowfullscreen>
+            </iframe>
+            </section>
+
+
+            <section>
+            <h3 id="poesia">Poesia</h3>
+            <div class="poema">
+                <p>Singapura desperta, luz no mar,</p>
+                <p>Arranha-céus erguem-se a brilhar,</p>
+                <p>Jardins suspensos, sonho a crescer,</p>
+                <p>No coração do mundo, a florescer.</p>
+                <p>Rio que abraça memórias e cor,</p>
+                <p>Cultura viva, misto de sabor,</p>
+                <p>Entre passado e futuro a dançar,</p>
+                <p>Singapura, farol a iluminar.</p>
+            </div>
+            </section>
+
+
+
+            </main>
+        <footer>
+            <p>DIW 2025</p>
+        </footer>
+    </body>
+</html>
