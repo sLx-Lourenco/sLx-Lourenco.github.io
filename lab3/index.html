@@ -3,20 +3,34 @@
     <head>
         <meta charset="UTF-8">
         <title>Cidade</title>
+
+       <link rel="stylesheet" href="styles2.css" />
     </head>
     <body>
+
         <header>
-            <h1>Singapura</h1>
-        </header>
-        <main>
-            <h2>Home</h2>
+            <h1><span>Singapura</span> <span class="hamburguer">&#9776;</span> </h1>
             <nav>
             <a href="index.html">Home</a>
             <a href="local.html">Localização</a>
             <a href="multimedia.html">Multimédia</a>
             <a href="info.html">Informação</a>
             </nav>
+        </header>
 
+        <script>
+  function toggleMenu() {
+    const nav = document.getElementById('menu');
+    if (nav.style.display === 'flex') {
+      nav.style.display = 'none';
+    } else {
+      nav.style.display = 'flex';
+      nav.style.flexDirection = 'column';
+    }
+  }
+</script>
+        <main>
+            
             <h2>🌏✨ Singapura: Onde o Futuro Encontra a Tradição ✨🌏</h2>
 
             <p>Singapura é muito mais que um ponto no mapa — é um símbolo vivo de inovação, 
