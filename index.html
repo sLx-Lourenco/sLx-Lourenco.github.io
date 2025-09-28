@@ -4,12 +4,105 @@
   <meta charset="utf-8">
   <title>Primeira Página</title>
   <link rel="stylesheet" href="styles.css" />
+
+  <style>
+
+    header {
+            background: red;
+            position: static;
+            height: 10vh;
+            top: 0;
+            }
+
+
+    #projetos {
+      background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVZcxAEUdiuWqO2c6rvtCSAdzBJFbvgsxmZA&s"); /* caminho da tua imagem */
+      background-size: cover;      /* cobre toda a área */
+      background-position: center; /* centraliza a imagem */
+      background-repeat: no-repeat;/* evita repetições */
+      padding: 40px 20px;          /* espaço interno para respirar */
+      border-radius: 12px;         /* opcional: cantos arredondados */
+    }
+
+    #projetos h2 {
+    color: white; 
+    text-align: center; 
+    font-size: 2rem;
+
+    /* contorno preto */
+    text-shadow: 
+      -2px -2px 0 black,  
+      2px -2px 0 black,
+      -2px  2px 0 black,
+      2px  2px 0 black;
+  }
+    nav {
+  margin: 20px 0;
+  padding: 20px;
+  gap: 20px;
+}
+
+nav a {
+  
+  padding: 10px 20px;
+  background-color: white;
+  text-decoration: none;
+  color: black;
+  border-radius: 5px;
+  border: 2px solid black;
+}
+  .v1 a {
+  display: flex;
+  flex-direction: column;   /* título em cima, texto em baixo */
+  align-items: center;
+  justify-content: center;
+
+  width: 180px;             /* controla a largura da box */
+  height: 120px;            /* controla a altura */
+  margin: 15px;
+  padding: 15px;
+
+  text-align: center;
+  text-decoration: none;
+  color: #222;
+
+  background: #fff;
+  border-radius: 12px;      /* cantos arredondados */
+  border: 1px solid #ddd;  
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+
+  transition: all 0.3s ease; /* animações suaves */
+}
+
+.v1 a:hover {
+  transform: translateY(-5px);      /* sobe um pouco */
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15); /* sombra mais forte */
+  border-color: #aaa;               /* borda mais visível */
+}
+
+.v1 h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #111;
+}
+
+.v1 p {
+  margin: 5px 0 0;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+  </style>
 </head>
 <body>
 
 <header>
   <h1>Primeira Página Web!</h1>
 </header>
+
+
+<!---------------------------------------------------------------------------------------->
 
 <main>
 
@@ -23,28 +116,36 @@
     </nav>
   </section>
 
+  <!---------------------------------------------------------------------------------------->
+
   <section id="projetos">
   <h2>Laboratórios:</h2>
-  <br>
-  <div class="cards-container">
-    
-    <a href="lab1/index.html" class="card">
+
+
+  <box>
+  <nav class="v1">
+    <a href="lab1/index.html">
       <h3>Lab1</h3>
       <p>Estrutura base e semantica</p>
     </a>
-
-    <a href="lab2/index.html" class="card">
+    
+    <a href="lab2/index.html">
       <h3>Lab2</h3>
       <p>Estilos e layout responsivo</p>
     </a>
 
-    <a href="lab3/index.html" class="card">
+    <a href="lab3/index.html">
       <h3>Lab3</h3>
       <p>Interatividade com JS</p>
     </a>
-  </div>
+
+  </nav>
+
+</box1>
+  
 </section>
 
+  <!---------------------------------------------------------------------------------------->
 
   <section id="cadeira">
     <p>diw 🎉</p>
