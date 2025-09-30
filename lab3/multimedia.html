@@ -53,6 +53,16 @@
             padding: 40px 20px;          /* espaço interno para respirar */
             }
 
+            #fundo {
+                text-align: center;
+            background-color: white;
+            border: 3px solid black;
+            background-size: cover;      /* cobre toda a área */
+            background-position: center; /* centraliza a imagem */
+            background-repeat: no-repeat;/* evita repetições */
+            padding: 40px 20px;          /* espaço interno para respirar */
+            }
+
              #videoBackground {
                 text-align: center;
              background-color: #fde2e2;   /* fundo rosa pastel*/
@@ -130,6 +140,24 @@
   color: black;
 }
 
+#parallax {
+  /* imagem de fundo para parallax */
+  background-image: url('https://cdn.pixabay.com/photo/2017/07/21/23/41/note-2527458_1280.jpg');
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 50px 0; /* espaço acima e abaixo */
+}
+
+/* Mantém as secções visíveis por cima do parallax */
+#parallax section {
+  margin: 200px auto;
+  padding: 30px;
+  border-radius: 12px;
+  max-width: 1200px;
+}
+
             
             
         </style>
@@ -156,7 +184,7 @@
             </nav>
             <br><br><br>
 
-
+            <section id="parallax">
             <section id="fotografias">
             <h3>Fotografias</h3><br>
                 <div class="imagens">
@@ -222,7 +250,9 @@
             </div>
             </section>
 
-            
+            </section>
+
+
             </main>
         <footer>
             <p>DIW 2025</p>
