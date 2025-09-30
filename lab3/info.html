@@ -6,7 +6,70 @@
         <link rel="stylesheet" href="styles2.css" />
 
         <style>
-            
+            .grid-info {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr; /* 3 colunas */
+            grid-template-rows: auto auto;
+            gap: 20px;
+            padding: 20px;
+
+            grid-template-areas:
+                "intro vazio imagem1"
+                "imagem2 tabela tabela";
+            }
+
+            /* Áreas definidas */
+            .intro {
+            grid-area: intro;
+            background: #f9f9f9;
+            padding: 15px;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            }
+
+            .vazio {
+            grid-area: vazio;
+            }
+
+            .imagem1 {
+            grid-area: imagem1;
+            }
+
+            .imagem2 {
+            grid-area: imagem2;
+            }
+
+            .tabela {
+            grid-area: tabela;
+            background: #fff;
+            padding: 15px;
+            border: 2px solid #000;
+            border-radius: 10px;
+            }
+
+            .imagem1 img,
+            .imagem2 img {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            }
+
+            .imagem2 img {
+            height: 300px; 
+            }
+            /* Responsivo */
+            @media (max-width: 768px) {
+            .grid-info {
+                grid-template-columns: 1fr; 
+                grid-template-areas:
+                "intro"
+                "imagem1"
+                "imagem2"
+                "tabela";
+            }
+            }
+
+
             
         </style>
     </head>
@@ -21,43 +84,70 @@
             </nav>
         </header>
         <main>
+        <h2>Informações</h2>
+        <p>Nesta página encontra conteúdos de informação.</p>
 
-            <h2>Informações</h2>
-            <p>Nesta pagina encontra conteudos de informaçao.</p>
+        <div class="grid-info">
+  <!-- Texto -->
+  <div class="intro">
+    <h3>Sobre Singapura</h3>
+    <p>
+      Uma cidade-estado moderna e multicultural, conhecida pelos arranha-céus,
+      jardins suspensos e um dos maiores portos do mundo.
+    </p>
+  </div>
 
-            <table>
-            <caption>Dados sobre Singapura</caption>
-            <tr>
-                <th rowspan="2">Categoria</th>
-                <th colspan="2">Detalhes</th>
-            </tr>
-            <tr>
-                <th>Descrição</th>
-                <th>Valor</th>
-            </tr>
-            <tr>
-                <td>População</td>
-                <td>Total de habitantes</td>
-                <td>≈ 5,9 milhões</td>
-            </tr>
-            <tr>
-                <td>Área</td>
-                <td>Superfície total</td>
-                <td>728 km²</td>
-            </tr>
-            <tr>
-                <td>Moeda</td>
-                <td>Unidade monetária oficial</td>
-                <td>Dólar de Singapura (SGD)</td>
-            </tr>
-            <tr>
-                <td>Clima</td>
-                <td>Tipo predominante</td>
-                <td>Tropical húmido</td>
-            </tr>
-            </table>
+  <!-- Espaço vazio -->
+  <div class="vazio"></div>
 
-            </main>
+  <!-- Imagem 1 -->
+  <div class="imagem1">
+    <img src="https://cdn.pixabay.com/photo/2017/08/19/05/43/singapore-2657497_1280.jpg" alt="Skyline de Singapura">
+  </div>
+
+  <!-- Imagem 2 -->
+  <div class="imagem2">
+    <img src="https://media.istockphoto.com/id/510873966/pt/foto/skyline-de-cidade-de-singapura.jpg?s=1024x1024&w=is&k=20&c=lJOaUUzkq-MQecvj2GL3SbYd9AlCUK0svrRlmR0Nlss=" alt="Gardens by the Bay">
+  </div>
+
+  <!-- Tabela -->
+  <div class="tabela">
+    <table>
+      <caption>Dados sobre Singapura</caption>
+      <tr>
+        <th rowspan="2">Categoria</th>
+        <th colspan="2">Detalhes</th>
+      </tr>
+      <tr>
+        <th>Descrição</th>
+        <th>Valor</th>
+      </tr>
+      <tr>
+        <td>População</td>
+        <td>Total de habitantes</td>
+        <td>≈ 5,9 milhões</td>
+      </tr>
+      <tr>
+        <td>Área</td>
+        <td>Superfície total</td>
+        <td>728 km²</td>
+      </tr>
+      <tr>
+        <td>Moeda</td>
+        <td>Unidade monetária oficial</td>
+        <td>Dólar de Singapura (SGD)</td>
+      </tr>
+      <tr>
+        <td>Clima</td>
+        <td>Tipo predominante</td>
+        <td>Tropical húmido</td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+        </main>
+
         <footer>
             <p>DIW 2025</p>
         </footer>
