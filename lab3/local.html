@@ -5,6 +5,43 @@
         <title>Cidade</title>
                 <link rel="stylesheet" href="styles2.css" />
 
+
+    
+        <style>
+            .layout {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+            }
+
+            /* Texto e mapa lado a lado no PC */
+            .layout p {
+            flex: 1; /* texto ocupa espaço disponível */
+            }
+            .layout iframe {
+            flex: 1; /* mapa ocupa espaço disponível */
+            max-width: 100%;
+            }
+
+            /* No telemóvel, fica em coluna */
+            @media (max-width: 768px) {
+            .layout {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .layout p {
+                text-align: justify;
+            }
+
+            .layout iframe {
+                width: 100%;  /* ocupa toda a largura */
+                height: 300px;
+            }
+            }
+
+
+        </style>
     </head>
     <body>
         <header>
@@ -17,15 +54,25 @@
             </nav>
         </header>
         <main>
-
-
             <h2>Localização</h2>
 
-            <p>Singapura é uma cidade-estado insular situada no sudeste da Ásia, no continente 
-            asiático. Fica no extremo sul da Península Malaia, separada da Malásia pelo Estreito 
-            de Johor a norte, e das Ilhas Riau da Indonésia pelo Estreito de Singapura a sul.</p>
+            <div class="layout">
+                <br><br><br><p>
+                Singapura é uma cidade-estado insular situada no sudeste da Ásia, no continente 
+                asiático. Fica no extremo sul da Península Malaia, separada da Malásia pelo Estreito 
+                de Johor a norte, e das Ilhas Riau da Indonésia pelo Estreito de Singapura a sul.
+                </p>
 
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d240532.02029691456!2d103.80982598739645!3d1.315204193392991!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da11238a8b9375%3A0x887869cf52abf5c4!2sSingapura!5e0!3m2!1spt-PT!2spt!4v1758219165677!5m2!1spt-PT!2spt" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d240532.02029691456!2d103.80982598739645!3d1.315204193392991!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da11238a8b9375%3A0x887869cf52abf5c4!2sSingapura!5e0!3m2!1spt-PT!2spt!4v1758219165677!5m2!1spt-PT!2spt" 
+                width="400" 
+                height="300" 
+                style="border:0;" 
+                allowfullscreen 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
             </main>
         <footer>
             <p>DIW 2025</p>
