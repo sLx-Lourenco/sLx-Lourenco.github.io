@@ -53,6 +53,15 @@
             padding: 40px 20px;          /* espaço interno para respirar */
             }
 
+             #videoBackground {
+                text-align: center;
+             background-color: #fde2e2;   /* fundo rosa pastel*/
+            border: 3px solid black;
+            background-size: cover;      /* cobre toda a área */
+            background-position: center; /* centraliza a imagem */
+            background-repeat: no-repeat;/* evita repetições */
+            padding: 40px 20px;          /* espaço interno para respirar */
+            }
 
             #fundo {
             position: relative;
@@ -75,7 +84,51 @@
             font-weight: bold;
             }
 
+/* Secção do vídeo */
+#videoBackground {
+  position: relative;
+  height: 100vh;        /* ocupa toda a altura da janela */
+  overflow: hidden;
+}
 
+/* O vídeo cobre todo o fundo */
+#myVideo {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;    /* garante que cobre o ecrã sem distorcer */
+  z-index: -1;          /* fica atrás do conteúdo */
+}
+
+/* Conteúdo por cima do vídeo */
+#videoBackground .content {
+  position: absolute;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5); /* semitransparente */
+  color: #f1f1f1;
+  width: 100%;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Botão */
+#myBtn {
+  width: 200px;
+  font-size: 18px;
+  padding: 10px;
+  border: none;
+  background: #000;
+  color: #fff;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+#myBtn:hover {
+  background: #ddd;
+  color: black;
+}
 
             
             
@@ -153,9 +206,46 @@
             </section>
 
 
+            <section id="videoBackground">
+            <!-- The video -->
+            <video autoplay muted loop id="myVideo">
+                <source src="./mp4/v1.mp4" type="video/mp4">
+                O seu navegador não suporta vídeos em HTML5.
+            </video>
+
+           <!-- Optional: some overlay text to describe the video -->
+            <div class="content">
+                <h1>Singapura Noturna</h1>
+                <p>A cidade que nunca dorme ✨</p>
+                <!-- Use a button to pause/play the video with JavaScript -->
+                <button id="myBtn" onclick="myFunction()">Pause</button>
+            </div>
+            </section>
+
+            
             </main>
         <footer>
             <p>DIW 2025</p>
         </footer>
     </body>
+
+        <script>
+        // Get the video
+        let video = document.getElementById("myVideo");
+
+        // Get the button
+        let btn = document.getElementById("myBtn");
+
+        // Pause and play the video, and change the button text
+        function myFunction() {
+            if (video.paused) {
+            video.play();
+            btn.innerHTML = "Pause";
+            } else {
+            video.pause();
+            btn.innerHTML = "Play";
+            }
+        }
+        </script>
+
 </html>
