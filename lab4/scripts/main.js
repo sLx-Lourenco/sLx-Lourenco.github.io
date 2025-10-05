@@ -1,14 +1,13 @@
-// main.js
-
+// Contador no título
 let counter = 0;
 const heading = document.querySelector('h1');
 
 function count() {
-   counter++;
-   heading.textContent = counter;
+  counter++;
+  heading.textContent = counter;
 } 
 
-// 1.
+// 1. Passa por aqui
 const passa = document.getElementById("passa");
 passa.addEventListener("mouseover", () => {
   passa.style.color = "blue";
@@ -19,41 +18,45 @@ passa.addEventListener("mouseout", () => {
   passa.textContent = "1. Passa por aqui!";
 });
 
-// 2.
-document.getElementById("vermelho").onclick = () => document.querySelector("#pinta span").style.color = "red";
-document.getElementById("verde").onclick = () => document.querySelector("#pinta span").style.color = "green";
-document.getElementById("azul").onclick = () => document.querySelector("#pinta span").style.color = "blue";
+// 2. Pinta-me!
+document.getElementById("vermelho").onclick = () =>
+  document.querySelector("#pinta span").style.color = "red";
+document.getElementById("verde").onclick = () =>
+  document.querySelector("#pinta span").style.color = "green";
+document.getElementById("azul").onclick = () =>
+  document.querySelector("#pinta span").style.color = "blue";
 
-// 3.
+// 3. Mudar cor ao digitar
+let contadorInput = 0;
 const texto = document.getElementById("texto");
-texto.addEventListener("mousemove", () => {
-  texto.style.backgroundColor = "lightcoral";
-});
-texto.addEventListener("mouseout", () => {
-  texto.style.backgroundColor = "white";
+const cores = ["lightcoral", "lightgreen", "lightblue"];
+
+texto.addEventListener("input", () => {
+  texto.style.backgroundColor = cores[contadorInput % cores.length];
+  contadorInput++;
 });
 
-// 4.
+// 4. Mudar cor do fundo ao submeter
 document.getElementById("submeter").onclick = () => {
   const cor = document.getElementById("corEscolhida").value.toLowerCase();
   document.body.style.backgroundColor = cor;
 };
 
-// 5.
-let contador = 0;
+// 5. Contador com botão
+let contadorBotao = 0;
 const botaoConta = document.getElementById("conta");
 const contadorSpan = document.getElementById("contador");
 
 botaoConta.addEventListener("click", () => {
-  contador++;
-  contadorSpan.textContent = contador;
+  contadorBotao++;
+  contadorSpan.textContent = contadorBotao;
 });
 botaoConta.addEventListener("dblclick", () => {
-  contador = 0;
-  contadorSpan.textContent = contador;
+  contadorBotao = 0;
+  contadorSpan.textContent = contadorBotao;
 });
 
-// 6. mouseover na imagem
+// 6. Efeito na imagem
 const imagem = document.getElementById("imagem");
 imagem.addEventListener("mouseover", () => {
   imagem.style.border = "3px solid gold";
