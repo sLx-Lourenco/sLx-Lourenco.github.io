@@ -8,7 +8,7 @@ function count() {
    heading.textContent = counter;
 } 
 
-// 1. Mouseover e mouseout no parágrafo
+// 1.
 const passa = document.getElementById("passa");
 passa.addEventListener("mouseover", () => {
   passa.style.color = "blue";
@@ -19,12 +19,12 @@ passa.addEventListener("mouseout", () => {
   passa.textContent = "1. Passa por aqui!";
 });
 
-// 2. Click nos botões para mudar cor
+// 2.
 document.getElementById("vermelho").onclick = () => document.querySelector("#pinta span").style.color = "red";
 document.getElementById("verde").onclick = () => document.querySelector("#pinta span").style.color = "green";
 document.getElementById("azul").onclick = () => document.querySelector("#pinta span").style.color = "blue";
 
-// 3. Mousemove no input para mudar cor de fundo conforme o texto
+// 3.
 const texto = document.getElementById("texto");
 texto.addEventListener("mousemove", () => {
   texto.style.backgroundColor = "lightcoral";
@@ -33,13 +33,13 @@ texto.addEventListener("mouseout", () => {
   texto.style.backgroundColor = "white";
 });
 
-// 4. Submeter cor escrita
+// 4.
 document.getElementById("submeter").onclick = () => {
   const cor = document.getElementById("corEscolhida").value.toLowerCase();
   document.body.style.backgroundColor = cor;
 };
 
-// 5. Contador com duplo clique
+// 5.
 let contador = 0;
 const botaoConta = document.getElementById("conta");
 const contadorSpan = document.getElementById("contador");
@@ -53,7 +53,7 @@ botaoConta.addEventListener("dblclick", () => {
   contadorSpan.textContent = contador;
 });
 
-// 6. Extra: mouseover na imagem
+// 6. mouseover na imagem
 const imagem = document.getElementById("imagem");
 imagem.addEventListener("mouseover", () => {
   imagem.style.border = "3px solid gold";
