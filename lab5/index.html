@@ -22,7 +22,7 @@
       </p>
 
       <p>3. Experimenta escrever... 
-        <input id="texto" type="text" placeholder="Escreve algo..." />
+        <input id="palavra" type="text" placeholder="Escreve algo..." />
       </p>
 
       <p>4. Escolha uma cor em inglês:
@@ -37,6 +37,92 @@
       <!-- HTML já carregado! -->
     <script src="scripts/main.js"></script>
     </section>
+
+
+
+
+  <script>
+    // Contador no título
+    let counter = 0;
+    const heading = document.querySelector('h1');
+
+    function count() {
+      counter++;
+      heading.textContent = counter;
+    } 
+    // 1.
+
+    const passa = document.querySelector("#passa");
+
+    function onMouseOver() {
+      passa.textContent = "1. Olá! Passaste o rato!";
+    }
+
+    function onMouseOut() {
+      passa.textContent = "1. Passa por aqui!";
+    }
+
+    passa.onmouseover = onMouseOver;
+    passa.onmouseout = onMouseOut;
+
+    // 2.
+
+    document.getElementById("vermelho").onclick = () => document.querySelector("#pinta span").style.color = "red";
+    document.getElementById("verde").onclick = () => document.querySelector("#pinta span").style.color = "green";
+    document.getElementById("azul").onclick = () => document.querySelector("#pinta span").style.color = "blue";
+
+
+    // 3.
+    const inputColorir = document.querySelector("#palavra");
+    const cores = ['red', 'blue', 'green'];
+    let index=0;
+
+    function colorir(){
+      inputColorir.style.background = cores[index];
+      index = (index+1)%cores.length;
+    }
+
+    inputColorir.onkeyup = () => colorir();
+
+
+    // 4. Mudar cor do fundo ao submeter
+    const inputCor = document.querySelector("#corEscolhida");
+    const botaoSubmeter = document.querySelector("#submeter");
+
+    function mudarCorDeFundo() {
+      const cor = inputCor.value.toLowerCase();
+      document.body.style.backgroundColor = cor;
+    }
+
+    botaoSubmeter.onclick = () => mudarCorDeFundo();
+
+    // 5. Contador com botão
+    const botaoConta = document.querySelector("#conta");
+    const contadorSpan = document.querySelector("#contador");
+    let contadorBotao = 0;
+
+    function atualizarContador(valor) {
+      contadorBotao = valor;
+      contadorSpan.textContent = contadorBotao;
+    }
+
+    botaoConta.onclick = () => atualizarContador(contadorBotao + 1);
+
+
+
+    // 6. Efeito na imagem
+    const imagem = document.querySelector("#imagem");
+
+    function destacarImagem() {
+      imagem.style.border = "3px solid gold";
+    }
+    function removerDestaque() {
+      imagem.style.border = "none";
+    }
+
+    imagem.onmouseover = () => destacarImagem();
+    imagem.onmouseout = () => removerDestaque();
+  </script>
   </main>
 </body>
 </html>
