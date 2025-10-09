@@ -59,30 +59,39 @@ inputColorir.onkeyup = () => colorir;
 
 
 // 4. Mudar cor do fundo ao submeter
-document.getElementById("submeter").onclick = () => {
-  const cor = document.getElementById("corEscolhida").value.toLowerCase();
+const inputCor = document.querySelector("#corEscolhida");
+const botaoSubmeter = document.querySelector("#submeter");
+
+function mudarCorDeFundo() {
+  const cor = inputCor.value.toLowerCase();
   document.body.style.backgroundColor = cor;
-};
+}
+
+botaoSubmeter.onclick = () => mudarCorDeFundo();
+
 
 // 5. Contador com botão
+const botaoConta = document.querySelector("#conta");
+const contadorSpan = document.querySelector("#contador");
 let contadorBotao = 0;
-const botaoConta = document.getElementById("conta");
-const contadorSpan = document.getElementById("contador");
 
-botaoConta.addEventListener("click", () => {
-  contadorBotao++;
+function atualizarContador(valor) {
+  contadorBotao = valor;
   contadorSpan.textContent = contadorBotao;
-});
-botaoConta.addEventListener("dblclick", () => {
-  contadorBotao = 0;
-  contadorSpan.textContent = contadorBotao;
-});
+}
+
+botaoConta.onclick = () => atualizarContador(contadorBotao + 1);
+botaoConta.ondblclick = () => atualizarContador(0); //duplo click
 
 // 6. Efeito na imagem
-const imagem = document.getElementById("imagem");
-imagem.addEventListener("mouseover", () => {
+const imagem = document.querySelector("#imagem");
+
+function destacarImagem() {
   imagem.style.border = "3px solid gold";
-});
-imagem.addEventListener("mouseout", () => {
+}
+function removerDestaque() {
   imagem.style.border = "none";
-});
+}
+
+imagem.onmouseover = () => destacarImagem();
+imagem.onmouseout = () => removerDestaque();
