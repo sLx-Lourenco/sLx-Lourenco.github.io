@@ -21,6 +21,11 @@
       background-position: center; /* centraliza a imagem */
       background-repeat: no-repeat;/* evita repetições */
       padding: 40px 20px;          /* espaço interno para respirar */
+      
+  display: flex;
+  flex-direction: column; /* garante que h2 fique em cima */
+
+
     }
 
     #projetos h2 {
@@ -50,9 +55,18 @@ nav a {
   border-radius: 5px;
   border: 2px solid black;
 }
+.v1 {
+  display: flex;            /* transforma o container em flexbox */
+  flex-direction: row;      /* organiza os filhos horizontalmente */
+  flex-wrap: wrap;          /* permite quebrar linha se não couber */
+  justify-content: center; /* alinha à esquerda (ou center para centralizado) */
+  gap: 20px;                /* espaço entre os itens */
+}
+
+
   .v1 a {
   display: flex;
-  flex-direction: column;   /* título em cima, texto em baixo */
+  flex-direction: column;   
   align-items: center;
   justify-content: center;
 
@@ -164,9 +178,14 @@ nav a {
       <p>JS DOM|Eventos</p>
     </a>
 
+    <a href="lab5/index.html">
+      <h3>Lab5</h3>
+      <p>JS</p>
+    </a>
+
   </nav>
 
-</box1>
+</box>
   
 </section>
 
