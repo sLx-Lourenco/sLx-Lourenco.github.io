@@ -58,7 +58,7 @@
 
 
   <script>
-    // Contador no título
+// Contador no título
     let counter = 0;
     const heading = document.querySelector('h1');
 
@@ -124,17 +124,30 @@
     document.querySelector('body').style.backgroundColor = this.value;
     };
 
+  
+  
     // 5. Contador com botão
-    const botaoConta = document.querySelector("#conta");
-    const contadorSpan = document.querySelector("#contador");
-    let contadorBotao = 0;
+  const botaoConta = document.querySelector("#conta");
+  const contadorSpan = document.querySelector("#contador");
 
-    function atualizarContador(valor) {
-      contadorBotao = valor;
-      contadorSpan.textContent = contadorBotao;
-    }
+  // Inicializa o counter no localStorage se não existir
+  if (!localStorage.getItem('counter')) { 
+    localStorage.setItem('counter', '0'); 
+  }
 
-    botaoConta.onclick = () => atualizarContador(contadorBotao + 1);
+  // Função para atualizar o contador
+  function atualizarContador() {
+    let counter = parseInt(localStorage.getItem('counter')); // pega do localStorage
+    counter++; // incrementa
+    localStorage.setItem('counter', counter); // salva no localStorage
+    contadorSpan.textContent = counter; // atualiza o elemento na página
+  }
+
+  // Atualiza o contador na página quando a página é carregada
+  contadorSpan.textContent = localStorage.getItem('counter');
+
+  // Adiciona o evento ao botão
+  botaoConta.onclick = atualizarContador;
 
 
     // 6. Submit do form
