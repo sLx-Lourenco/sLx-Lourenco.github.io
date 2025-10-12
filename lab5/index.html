@@ -48,6 +48,9 @@
 
       <p id="mensagem"></p>
 
+
+      <p>7. Automatic Counter: <span id="contadorAutomatico">0</span></p>
+
       <img id="imagem" src="images\images.JPEG">
 
       <!-- HTML já carregado! -->
@@ -161,7 +164,20 @@
     document.querySelector('#mensagem').textContent = mensagem;
     };
 
-    // 7. Efeito na imagem
+      //7. Cont automatico
+
+      const contadorA = document.querySelector("#contadorAutomatico");
+      let contador = 0;
+
+      function count() {
+        contador++;
+        contadorA.textContent = contador;
+      }
+      setInterval(count, 1000);
+
+
+
+    // 8. Efeito na imagem
     const imagem = document.querySelector("#imagem");
 
     function destacarImagem() {
