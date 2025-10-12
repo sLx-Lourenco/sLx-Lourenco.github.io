@@ -26,11 +26,27 @@
       </p>
 
       <p>4. Escolha uma cor em inglês:
-        <input id="corEscolhida" type="text" />
-        <button id="submeter">submeter</button>
+        <select id="corEscolhida">
+          <option value="white">White</option>
+          <option value="red">Red</option>
+          <option value="green">Green</option>
+          <option value="blue">Blue</option>
+          <option value="yellow">Yellow</option>
+          <option value="purple">Purple</option>
+        </select>
       </p>
+      
 
       <p>5. <button id="conta">Conta!</button> <span id="contador">0</span></p>
+
+      <form>
+        <a>6.</a>
+          <input id="nome" type="text" placeholder="insira o seu nome">
+          <input id="idade" type="text" placeholder="insira a sua idade">
+          <input type="submit" placeholder="Submit">
+      </form>
+
+      <p id="mensagem"></p>
 
       <img id="imagem" src="images\images.JPEG">
 
@@ -95,7 +111,7 @@
 
 
     // 4. Mudar cor do fundo ao submeter
-    const inputCor = document.querySelector("#corEscolhida");
+    /*const inputCor = document.querySelector("#corEscolhida");
     const botaoSubmeter = document.querySelector("#submeter");
 
     function mudarCorDeFundo() {
@@ -103,7 +119,10 @@
       document.body.style.backgroundColor = cor;
     }
 
-    botaoSubmeter.onclick = () => mudarCorDeFundo();
+    botaoSubmeter.onclick = () => mudarCorDeFundo();*/
+    document.querySelector('#corEscolhida').onchange = function() {
+    document.querySelector('body').style.backgroundColor = this.value;
+    };
 
     // 5. Contador com botão
     const botaoConta = document.querySelector("#conta");
@@ -118,8 +137,18 @@
     botaoConta.onclick = () => atualizarContador(contadorBotao + 1);
 
 
+    // 6. Submit do form
 
-    // 6. Efeito na imagem
+    document.querySelector('form').onsubmit = (e) => {
+    
+    e.preventDefault() // para não recarregar a página
+    const nome = document.querySelector('#nome').value;
+    const idade = document.querySelector('#idade').value;
+    const mensagem = `Olá, o ${nome} tem ${idade} anos!`;
+    document.querySelector('#mensagem').textContent = mensagem;
+    };
+
+    // 7. Efeito na imagem
     const imagem = document.querySelector("#imagem");
 
     function destacarImagem() {
