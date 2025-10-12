@@ -16,9 +16,9 @@
       <p id="passa">1. Passa por aqui!</p>
 
       <p id="pinta">2. <span>Pinta-me!</span>
-        <button id="vermelho">Red</button>
-        <button id="verde">Green</button>
-        <button id="azul">Blue</button>
+        <button class="color" data-color="red">Red</button>
+        <button class="color" data-color="green">Green</button>
+        <button class="color" data-color="blue">Blue</button>
       </p>
 
       <p>3. Experimenta escrever... 
@@ -66,10 +66,19 @@
     passa.onmouseout = onMouseOut;
 
     // 2.
+    const item = document.querySelector("#pinta");
+    document.querySelectorAll("button.color").forEach((e) => {
+      e.addEventListener("click", () => {item.style.color=e.dataset.color;});
+    })
+    /*
 
+    
     document.getElementById("vermelho").onclick = () => document.querySelector("#pinta span").style.color = "red";
     document.getElementById("verde").onclick = () => document.querySelector("#pinta span").style.color = "green";
     document.getElementById("azul").onclick = () => document.querySelector("#pinta span").style.color = "blue";
+
+    */
+
 
 
     // 3.
