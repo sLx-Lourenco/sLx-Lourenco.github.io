@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DEISI Shop</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <header>
+    <h1>DEISI Shop</h1>
+    <nav>
+      <ul>
+        <li><a href="#produtos">Produtos</a></li>
+        <li><a href="#cesto">Cesto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section aria-labelledby="titulo-produtos">
+      <h2 id="titulo-produtos">Lista de Produtos</h2>
+      <section id="produtos">
+        <!-- Produtos gerados dinamicamente via JS -->
+      </section>
+    </section>
+
+    <section id="cesto">
+      <h2>Cesto</h2>
+      <p>O teu cesto está vazio.</p>
+
+      <button id="limpar-cesto">Limpar cesto 🧹</button>
+    </section>
+
+    
+  </main>
+
+  <footer>
+    <p>&copy; 2025 DEISI Shop. Todos os direitos reservados.</p>
+  </footer>
+
+  <script src="produtos.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
