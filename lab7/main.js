@@ -2,9 +2,6 @@ let produtos ={};
 let categorias={};
 
 
-
-
-
 document.addEventListener("DOMContentLoaded", () => {
 
   fetch("https://deisishop.pythonanywhere.com/products/")
@@ -20,17 +17,23 @@ document.addEventListener("DOMContentLoaded", () => {
     .then(data => {
       categorias = data;
       criarFiltroCategorias(categorias);
+      criarFiltroOrdenacao();
+      criarFiltroPesquisa();
     })
     .catch(error => console.error("Erro ao carregar categorias:", error));
+  
+
 });
   //Garante que o cesto aparece logo ao abrir a página
 
+//---------------------Criar Filtros--------------------------
+const divFiltros = document.createElement("div");
 
-// -------------------- Filtro de categorias --------------------
+
 function criarFiltroCategorias(categorias) {
   const container = document.querySelector("header");
-  const filtroDiv = document.createElement("div");
-  filtroDiv.id = "filtro-container";
+
+  divFiltros.classList.add("filtro-item");
 
   const label = document.createElement("label");
   label.setAttribute("for", "filtro-categorias");
@@ -39,42 +42,104 @@ function criarFiltroCategorias(categorias) {
   const select = document.createElement("select");
   select.id = "filtro-categorias";
 
-  // Opção "todas"
   const opcaoTodas = document.createElement("option");
   opcaoTodas.value = "todas";
   opcaoTodas.textContent = "Todas as categorias";
   select.appendChild(opcaoTodas);
 
-  // Adiciona categorias vindas da API
   categorias.forEach(cat => {
     const option = document.createElement("option");
-    option.value = cat; // É uma string simples
+    option.value = cat;
     option.textContent = cat;
     select.appendChild(option);
   });
 
-  // Evento de mudança
-  select.addEventListener("change", () => {
-    if (select.value === "todas") {
-      carregarProdutos(produtos);
-    } else {
-      procurarPorCategoria(select.value);
-    }
-  });
+  select.addEventListener("change", filtrarProdutos);
 
-  filtroDiv.append(label, select);
-  container.append(filtroDiv); 
+  divFiltros.append(label, select);
+  container.append(divFiltros);
 }
 
-// -------------------- Pesquisa --------------------
-function procurarPorCategoria(categoria) {
-  const produtosFiltrados = produtos.filter(p => p.category === categoria);
+function criarFiltroOrdenacao() {
+  const container = document.querySelector("header");
+
+  divFiltros.classList.add("filtro-item");
+
+  const label = document.createElement("label");
+  label.setAttribute("for", "filtro-ordenacao");
+  label.textContent = "Preço: ";
+
+  const select = document.createElement("select");
+  select.id = "filtro-ordenacao";
+
+  [
+    { value: "padrao", text: "Padrão" },
+    { value: "crescente", text: "Menor para maior" },
+    { value: "decrescente", text: "Maior para menor" }
+  ].forEach(opt => {
+    const option = document.createElement("option");
+    option.value = opt.value;
+    option.textContent = opt.text;
+    select.appendChild(option);
+  });
+
+  select.addEventListener("change", filtrarProdutos);
+
+  divFiltros.append(label, select);
+  container.append(divFiltros);
+}
+
+function criarFiltroPesquisa() {
+  const container = document.querySelector("header");
+
+  divFiltros.classList.add("filtro-item");
+
+  const label = document.createElement("label");
+  label.setAttribute("for", "filtro-pesquisa");
+  label.textContent = "Pesquisar: ";
+
+  const input = document.createElement("input");
+  input.type = "text";
+  input.id = "filtro-pesquisa";
+  input.placeholder = "Nome do produto...";
+  input.addEventListener("input", filtrarProdutos);
+
+  divFiltros.append(label, input);
+  container.append(divFiltros);
+}
+
+
+
+
+// --------------------filtrar tudo-------------------
+// funcao que engloba todos os filtros
+function filtrarProdutos() {
+  const categoria = document.getElementById("filtro-categorias").value;
+  const ordenacao = document.getElementById("filtro-ordenacao").value;
+  const pesquisa = document.getElementById("filtro-pesquisa").value.toLowerCase();
+
+  // Filtrar por categoria
+  let produtosFiltrados = produtos.filter(p => {
+    return (categoria === "todas" || p.category === categoria);
+  });
+
+  // Filtrar por pesquisa de nome
+  produtosFiltrados = produtosFiltrados.filter(p =>
+    p.title.toLowerCase().includes(pesquisa)
+  );
+
+  // Ordenar
+  if (ordenacao === "crescente") {
+    produtosFiltrados.sort((a, b) => a.price - b.price);
+  } else if (ordenacao === "decrescente") {
+    produtosFiltrados.sort((a, b) => b.price - a.price);
+  }
+
+  // Atualizar lista
   carregarProdutos(produtosFiltrados);
 }
 
-
 // --------------------gestão dos produtos-------------------
-
 function carregarProdutos(produtos) {
   const container = document.getElementById("produtos");
   container.innerHTML = ""; // limpar antes de carregar
