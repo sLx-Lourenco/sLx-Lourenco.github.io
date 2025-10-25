@@ -1,5 +1,6 @@
 /* Usei o chatGPT para fazer 100% do css, para poupar tempo, já que nao era o intuito desta semana */
 body {
+  background-image: url('https://cdn.pixabay.com/photo/2016/06/02/02/33/triangles-1430105_1280.png');
       font-family: Arial, sans-serif;
       margin: 0;
       display: flex;
@@ -14,6 +15,22 @@ body {
       padding: 1em;
     }
 
+    header {
+  display: flex;
+  align-items: center;   /* centraliza verticalmente */
+  gap: 15px;             /* espaço entre logo e outros elementos */
+  padding: 10px 20px;
+}
+
+#logo {
+  height: 50px;
+  width: auto;
+  margin-right: 10px;    /* pequeno espaçamento após o logo */
+}
+
+nav {
+  margin-left: auto;     /* empurra o menu de navegação para o canto direito */
+}
     main {
       flex: 1;
       display: grid;
@@ -95,4 +112,17 @@ body {
 
     footer {
       font-size: 0.9em;
+    }
+
+    #cesto {
+      height: auto; 
+      max-height: 370px;       /* altura máxima */
+      overflow-y: auto;        /* scroll interno */
+      padding: 10px;
+      border: 2px solid #333;
+      border-radius: 10px;
+      background-color: #f9f9f9;
+      
+      position: sticky;        /* fixa relativo ao viewport */
+      top: 20px;               /* distância do topo ao fixar */
     }

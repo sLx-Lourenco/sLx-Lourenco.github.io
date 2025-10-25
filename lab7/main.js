@@ -245,6 +245,6 @@ function atualizarCesto() {
 
 
 // ------------------------------------------------------
-const titulo = document.createElement('h1');
+/*const titulo = document.createElement('h1');
 titulo.textContent = 'Viva o JavaScript!';
-document.body.append(titulo);
+document.body.append(titulo);*/
