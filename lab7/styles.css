@@ -1,0 +1,98 @@
+/* Usei o chatGPT para fazer 100% do css, para poupar tempo, já que nao era o intuito desta semana */
+body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header, footer {
+      background-color: #222;
+      color: white;
+      text-align: center;
+      padding: 1em;
+    }
+
+    main {
+      flex: 1;
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 1em;
+      padding: 1em;
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      gap: 1em;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    section {
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 1em;
+      background-color: #f9f9f9;
+    }
+
+    section h2 {
+      text-align: center;
+    }
+
+    /* Produtos em grid */
+    #produtos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1em;
+    }
+
+    article {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: white;
+      border-radius: 8px;
+      padding: 1em;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s;
+    }
+
+    article:hover {
+      transform: scale(1.03);
+    }
+
+    article img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    article h3 {
+      margin: 0.5em 0;
+      font-size: 1.1em;
+    }
+
+    article p {
+      font-size: 0.9em;
+      text-align: center;
+    }
+
+    article strong {
+      color: #007bff;
+    }
+
+    footer {
+      font-size: 0.9em;
+    }
