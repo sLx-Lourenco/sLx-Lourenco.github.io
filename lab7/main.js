@@ -28,11 +28,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
 //---------------------Criar Filtros--------------------------
 const divFiltros = document.createElement("div");
+divFiltros.id = "filtro-container";
+divFiltros.style.display = "flex";
+divFiltros.style.justifyContent = "center"; // centraliza horizontalmente
+divFiltros.style.alignItems = "center";     // centraliza verticalmente
+divFiltros.style.gap = "10px";              // mais espaço entre os elementos
+divFiltros.style.padding = "15px";          // aumenta o padding interno
+divFiltros.style.border = "3px solid #333";
+divFiltros.style.borderRadius = "20px";
+divFiltros.style.marginTop = "10px";        // espaço do topo do header
+document.querySelector("header").append(divFiltros);
 
 
 function criarFiltroCategorias(categorias) {
-  const container = document.querySelector("header");
-
   divFiltros.classList.add("filtro-item");
 
   const label = document.createElement("label");
@@ -57,12 +65,9 @@ function criarFiltroCategorias(categorias) {
   select.addEventListener("change", filtrarProdutos);
 
   divFiltros.append(label, select);
-  container.append(divFiltros);
 }
 
 function criarFiltroOrdenacao() {
-  const container = document.querySelector("header");
-
   divFiltros.classList.add("filtro-item");
 
   const label = document.createElement("label");
@@ -86,12 +91,9 @@ function criarFiltroOrdenacao() {
   select.addEventListener("change", filtrarProdutos);
 
   divFiltros.append(label, select);
-  container.append(divFiltros);
 }
 
 function criarFiltroPesquisa() {
-  const container = document.querySelector("header");
-
   divFiltros.classList.add("filtro-item");
 
   const label = document.createElement("label");
@@ -105,7 +107,6 @@ function criarFiltroPesquisa() {
   input.addEventListener("input", filtrarProdutos);
 
   divFiltros.append(label, input);
-  container.append(divFiltros);
 }
 
 
