@@ -238,7 +238,20 @@ function atualizarCesto() {
     atualizarCesto();
   });
 
-  secaoCesto.appendChild(limparBtn);
+    // ----------------- BOTÃO COMPRAR -----------------
+  const comprarBtn = document.createElement("button");
+  comprarBtn.textContent = "Comprar 🛒";
+  comprarBtn.style.marginLeft = "10px";
+  comprarBtn.addEventListener("click", () => {
+    // Aqui apenas redireciona — o cesto já está guardado no localStorage
+    window.location.href = "checkout.html";
+  });
+
+   const botoesDiv = document.createElement("div");
+  botoesDiv.style.marginTop = "10px";
+  botoesDiv.append(limparBtn, comprarBtn);
+
+  secaoCesto.appendChild(botoesDiv);
 }
 
 

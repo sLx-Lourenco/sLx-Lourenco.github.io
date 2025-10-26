@@ -1,0 +1,168 @@
+body {
+      font-family: Arial, sans-serif;
+      margin: 30px;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header, footer {
+      background-color: #222;
+      color: white;
+      text-align: center;
+      padding: 1em;
+    }
+
+    header {
+  display: flex;
+  align-items: center;   /* centraliza verticalmente */
+  gap: 15px;             /* espaço entre logo e outros elementos */
+  padding: 10px 20px;
+}
+
+#logo {
+  height: 50px;
+  width: auto;
+  margin-right: 10px;    /* pequeno espaçamento após o logo */
+}
+    
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    li {
+      margin-bottom: 8px;
+    }
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      border: none;
+      background-color: #333;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #555;
+    }
+
+#checkout {
+  background-color: #f9f9f9;
+  border: 2px solid #333;
+  border-radius: 15px;
+
+  /* Centralização */
+  width: 60%;               /* controla o tamanho — ajusta à vontade */
+  margin: 40px auto;        /* centra horizontalmente e dá espaço em cima/baixo */
+  padding: 30px;
+
+  /* Aparência */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+#listaCheckout {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.produto-checkout {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;  /* separa imagem e info/remover */
+  gap: 15px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 10px 20px;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.produto-checkout img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.info-produto {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* empurra o botão Remover para a direita */
+}
+
+.info-produto h3 {
+  font-size: 1em;
+  margin: 0;
+}
+
+.info-produto p {
+  margin: 0 15px;
+}
+
+.remover-btn {
+  background-color: #d9534f;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 6px 12px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  margin-left: auto; /* garante que vai o mais à direita possível */
+}
+
+.remover-btn:hover {
+  background-color: #c9302c;
+}
+
+.info-produto {
+  flex: 1;
+  display: flex;
+  justify-content: space-between; /* título/preço à esquerda, botão à direita */
+  align-items: center;
+}
+
+.texto-produto {
+  display: flex;
+  flex-direction: column; /* nome em cima, preço em baixo */
+  align-items: flex-start; /* tudo alinhado à esquerda */
+}
+
+.texto-produto h3 {
+  margin: 0;
+  font-size: 1em;
+}
+
+.texto-produto p {
+  margin: 5px 0 0 0;
+  font-weight: bold;
+}
+
+#opcoes-checkout input[type="checkbox"] {
+  transform: scale(1.2);
+  cursor: pointer;
+  
+}
+
+#opcoes-checkout input[type="text"] {
+  padding: 8px;
+  border: 1px solid #aaa;
+  border-radius: 6px;
+  width: 100%;
+  max-width: 250px;
+  
+}
+
+#opcoes-checkout label {
+  font-weight: bold;
+}
+
