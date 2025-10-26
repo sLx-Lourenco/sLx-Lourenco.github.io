@@ -27,6 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
   estudanteLabel.textContent = "Sou estudante";
 
   estudanteDiv.append(estudanteLabel, estudanteCheckbox);
+  //-----------------------------------------------------------------------------------
 
   // Campo de texto do cupão
   const cupaoDiv = document.createElement("div");
@@ -48,10 +49,41 @@ document.addEventListener("DOMContentLoaded", () => {
 
   cupaoDiv.append(cupaoLabel, cupaoInput);
 
+
   // Juntar tudo
   opcoesDiv.append(estudanteDiv, cupaoDiv);
   totalEl.insertAdjacentElement("afterend", opcoesDiv);
+  //-----------------------------------------------------------------------------------
+  // --- Container dos botões ---
+  const botoesContainer = document.createElement("div");
+  botoesContainer.style.display = "flex";
+  botoesContainer.style.justifyContent = "center";
+  botoesContainer.style.gap = "10px";
+  botoesContainer.style.marginTop = "20px";
 
+  // Botão Finalizar Compra
+  botoesContainer.appendChild(finalizarBtn);
+
+
+  // Botão Continuar a comprar
+  const continuarBtn = document.createElement("button");
+  continuarBtn.textContent = "Continuar a comprar";
+  continuarBtn.style.backgroundColor = "#333";
+  continuarBtn.style.color = "white";
+  continuarBtn.style.borderRadius = "5px";
+  continuarBtn.style.padding = "10px 20px";
+  continuarBtn.style.cursor = "pointer";
+  continuarBtn.addEventListener("click", () => {
+    window.location.href = "index.html";
+  });
+  continuarBtn.addEventListener("mouseover", () => continuarBtn.style.backgroundColor = "#555");
+  continuarBtn.addEventListener("mouseout", () => continuarBtn.style.backgroundColor = "#333");
+
+  botoesContainer.appendChild(continuarBtn);
+  opcoesDiv.insertAdjacentElement("afterend", botoesContainer);
+
+
+  //------------------------------------------------------------------------------------------------------
   // Função para carregar os produtos do cesto
   function carregarCheckout() {
     const cesto = JSON.parse(localStorage.getItem("cesto")) || [];
